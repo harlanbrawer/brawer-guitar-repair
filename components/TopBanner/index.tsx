@@ -1,110 +1,38 @@
-import { Link } from "expo-router";
-import type { FC } from "react";
-import { View, StyleSheet, Image } from "react-native";
-import { Button, useTheme, Text } from "react-native-paper";
+import { useRouter } from "expo-router";
+import { FC } from "react";
+import { StyleSheet, Image, TouchableOpacity } from "react-native";
+import { Appbar } from "react-native-paper";
 
 export const TopBanner: FC = () => {
-  const { colors } = useTheme();
+  const router = useRouter();
 
   return (
-    <View
-      style={{
-        ...styles.TopBannerContainer,
-        backgroundColor: colors.backdrop,
-      }}
-    >
-      <Image
-        style={{
-          width: "100%",
-          height: "100%",
-          resizeMode: "repeat",
-          position: "absolute",
-        }}
-        source={{ uri: "../../../assets/zoomed_fretboard.png" }}
-      />
-      <Link href="/" asChild>
+    <Appbar.Header>
+      <TouchableOpacity onPress={() => router.push("/")}>
         <Image
-          style={{
-            minWidth: 100,
-            width: 200,
-            height: 100,
-            resizeMode: "stretch",
-          }}
-          source={{ uri: "../../../assets/brawer_guitar_logo.jpg" }}
+          source={require("../../assets/brawer_guitar_logo.jpg")}
+          style={styles.logo}
         />
-      </Link>
-      <View
-        style={{
-          flexDirection: "row",
-          flexShrink: 0,
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <Link href="/" asChild>
-          <Button
-            icon="home"
-            mode="contained"
-            style={{
-              backgroundColor: colors.primary,
-              borderColor: colors.onPrimary,
-              borderWidth: 3,
-            }}
-          >
-            <Text style={{ color: colors.onPrimary }}>About Me</Text>
-          </Button>
-        </Link>
-        <Link href="/contact" asChild>
-          <Button
-            icon="email"
-            mode="contained"
-            style={{
-              backgroundColor: colors.primary,
-              borderColor: colors.onPrimary,
-              borderWidth: 3,
-            }}
-          >
-            <Text style={{ color: colors.onPrimary }}>Contact</Text>
-          </Button>
-        </Link>
-      </View>
-      {/* <View
-        style={{
-          flex: 1,
-          justifyContent: "flex-end",
-          flexDirection: "row",
-          height: "100%",
-          alignItems: "center",
-          width: 280,
-        }}
-      >
-        <Text
-          style={{
-            padding: 5,
-            width: 280,
-            fontSize: 40,
-            backgroundColor: "#111111",
-            height: "100%",
-            flexWrap: "wrap",
-            fontFamily: "impact",
-          }}
-        >
-          Brawer Guitar and Bass Repair
-        </Text>
-      </View> */}
-    </View>
+      </TouchableOpacity>
+      <Appbar.Action
+        iconColor="white"
+        icon="home"
+        size={40}
+        onPress={() => router.push("/")}
+      />
+      <Appbar.Action
+        iconColor="white"
+        icon="email"
+        size={35}
+        onPress={() => router.push("/contact")}
+      />
+    </Appbar.Header>
   );
 };
 
 const styles = StyleSheet.create({
-  TopBannerContainer: {
-    // flex: 1,
-    flexWrap: "wrap",
-    gap: 10,
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "flex-start",
-    // width: "100%",
-    // height: 100,
+  logo: {
+    width: 120,
+    height: 70,
   },
 });

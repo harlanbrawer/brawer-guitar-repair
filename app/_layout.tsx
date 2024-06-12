@@ -3,11 +3,11 @@ import type { FC } from "react";
 import { StyleSheet, ScrollView } from "react-native";
 import { useTheme } from "react-native-paper";
 
-import { TopBanner } from "../components";
-import { PaperRoot } from "../components/roots";
+import { PaperRoot, TopBanner } from "../components";
 
 const PageWrapper: FC = () => {
   const theme = useTheme();
+
   return (
     <ScrollView
       style={{
@@ -23,7 +23,6 @@ const PageWrapper: FC = () => {
 
 const styles = StyleSheet.create({
   TopPageLayout: {
-    // overflow: "scroll",
     flex: 1,
   },
 });

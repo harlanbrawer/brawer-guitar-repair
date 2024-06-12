@@ -7,6 +7,14 @@ module.exports = {
   settings: {},
   reportUnusedDisableDirectives: true,
   ignorePatterns: [],
-  rules: {},
+  rules: {
+    "comma-dangle": ["error", "always-multiline"],
+    "import/no-internal-modules": [
+      "error",
+      {
+        allow: ["**/assets/*"],
+      },
+    ],
+  },
   overrides: [],
 };
