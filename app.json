@@ -23,6 +23,7 @@
     },
     "web": {
       "favicon": "./assets/guitar_favicon.png",
+      "output": "static",
       "bundler": "metro"
     },
     "plugins": ["expo-router"],
