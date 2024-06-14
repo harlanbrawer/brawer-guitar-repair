@@ -32,14 +32,11 @@ const HomePage: FC = () => {
 const createStyles = (theme: MD3Theme) =>
   StyleSheet.create({
     container: {
-      flex: 1,
-      justifyContent: "center",
-      alignItems: "center",
       padding: 16,
       backgroundColor: theme.colors.secondary,
     },
     card: {
-      flexDirection: "row",
+      flexDirection: "column",
       backgroundColor: theme.colors.secondary,
       borderColor: theme.colors.primary,
       borderWidth: 1,
