@@ -25,9 +25,6 @@
       "favicon": "./assets/guitar_favicon.png",
       "bundler": "metro"
     },
-    "plugins": ["expo-router"],
-    "experiments": {
-      "baseUrl": "/"
-    }
+    "plugins": ["expo-router"]
   }
 }
