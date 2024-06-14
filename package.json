@@ -11,9 +11,10 @@
     "ts:check": "tsc",
     "lint": "eslint . --fix",
     "pretty": "prettier . --write",
-    "deploy": "gh-pages -t -d dist",
-    "predeploy": "expo export -p web",
-    "serve": "npx serve dist"
+    "build": "expo export -p web",
+    "deploy": "build & netlify deploy --dir dist --prod",
+    "deploy:dev": "build & netlify deploy --dir dist",
+    "serve": "build & npx serve dist --single"
   },
   "dependencies": {
     "@expo/metro-runtime": "~3.1.1",
