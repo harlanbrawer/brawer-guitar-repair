@@ -26,9 +26,6 @@
       "output": "single",
       "bundler": "metro"
     },
-    "plugins": ["expo-router"],
-    "experiments": {
-      "baseUrl": "/brawer-guitar-repair"
-    }
+    "plugins": ["expo-router"]
   }
 }
