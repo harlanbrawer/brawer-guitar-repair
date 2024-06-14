@@ -27,7 +27,7 @@
     },
     "plugins": ["expo-router"],
     "experiments": {
-      "baseUrl": "/"
+      "baseUrl": "/brawer-guitar-repair"
     }
   }
 }
