@@ -5,6 +5,7 @@ const customThemeBlackWhite = {
   colors: {
     primary: "#00000F",
     secondary: "#FFFFF0",
+    tertiary: "#7a7a7a",
   },
 };
 

@@ -1,10 +1,20 @@
+import { useRouter } from "expo-router";
 import { FC } from "react";
 import { StyleSheet, View, Image } from "react-native";
-import { Card, Title, Paragraph, MD3Theme } from "react-native-paper";
+import {
+  Card,
+  Title,
+  Paragraph,
+  MD3Theme,
+  Button,
+  Text,
+  Icon,
+} from "react-native-paper";
 
 import { useThemedStyleSheet } from "../../../src";
 
 const HomePage: FC = () => {
+  const router = useRouter();
   const styles = useThemedStyleSheet(createStyles);
 
   return (
@@ -24,6 +34,14 @@ const HomePage: FC = () => {
             experience to get your instrument playing its best.
           </Paragraph>
         </View>
+        <Button
+          mode="contained"
+          onPress={() => router.push("/contact")}
+          style={styles.appointmentButton}
+        >
+          <Icon source={"email"} size={20} />
+          <Text style={styles.appointmentButtonText}>Book an Appointment</Text>
+        </Button>
       </Card>
     </View>
   );
@@ -48,6 +66,7 @@ const createStyles = (theme: MD3Theme) =>
       maxWidth: 300,
       maxHeight: 300,
       aspectRatio: 1,
+      borderRadius: 5,
     },
     textContainer: {
       flex: 1,
@@ -61,6 +80,15 @@ const createStyles = (theme: MD3Theme) =>
     },
     paragraph: {
       color: theme.colors.primary,
+    },
+    appointmentButton: {
+      marginTop: 16,
+      color: theme.colors.primary,
+      alignSelf: "center",
+    },
+    appointmentButtonText: {
+      fontSize: 18,
+      paddingLeft: 5,
     },
   });
 

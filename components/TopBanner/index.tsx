@@ -1,12 +1,14 @@
-import { useRouter } from "expo-router";
+import { usePathname, useRouter } from "expo-router";
 import { FC } from "react";
 import { StyleSheet, Image, TouchableOpacity } from "react-native";
-import { Appbar } from "react-native-paper";
+import { Appbar, useTheme } from "react-native-paper";
 
 import { useThemedStyleSheet } from "../../src";
 
 export const TopBanner: FC = () => {
   const router = useRouter();
+  const currentPathname = usePathname();
+  const theme = useTheme();
   const styles = useThemedStyleSheet(createStyles);
 
   return (
@@ -18,15 +20,23 @@ export const TopBanner: FC = () => {
         />
       </TouchableOpacity>
       <Appbar.Action
-        iconColor="white"
+        iconColor={theme.colors.secondary}
+        style={{
+          backgroundColor:
+            currentPathname === "/" ? theme.colors.tertiary : undefined,
+        }}
         icon="home"
         size={40}
         onPress={() => router.push("/")}
       />
       <Appbar.Action
-        iconColor="white"
+        iconColor={theme.colors.secondary}
+        style={{
+          backgroundColor:
+            currentPathname === "/contact" ? theme.colors.tertiary : undefined,
+        }}
         icon="email"
-        size={35}
+        size={40}
         onPress={() => router.push("/contact")}
       />
     </Appbar.Header>

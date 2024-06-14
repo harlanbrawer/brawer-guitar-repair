@@ -71,7 +71,6 @@ const createStyles = (theme: MD3Theme) =>
     container: {
       flexGrow: 1,
       justifyContent: "center",
-      padding: 16,
       backgroundColor: theme.colors.secondary,
     },
     card: {
