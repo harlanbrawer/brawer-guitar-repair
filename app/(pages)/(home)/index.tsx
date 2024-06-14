@@ -46,8 +46,11 @@ const createStyles = (theme: MD3Theme) =>
       padding: 16,
     },
     image: {
-      width: 300,
-      height: 300,
+      minWidth: 150,
+      minHeight: 150,
+      maxWidth: 300,
+      maxHeight: 300,
+      aspectRatio: 1,
     },
     textContainer: {
       flex: 1,

@@ -7,7 +7,7 @@ export const TopBanner: FC = () => {
   const router = useRouter();
 
   return (
-    <Appbar.Header>
+    <Appbar.Header style={styles.header}>
       <TouchableOpacity onPress={() => router.push("/")}>
         <Image
           source={require("../../assets/brawer_guitar_logo.jpg")}
@@ -34,5 +34,8 @@ const styles = StyleSheet.create({
   logo: {
     width: 120,
     height: 70,
+  },
+  header: {
+    paddingLeft: 0,
   },
 });
