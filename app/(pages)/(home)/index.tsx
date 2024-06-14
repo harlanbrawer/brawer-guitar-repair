@@ -20,11 +20,13 @@ const HomePage: FC = () => {
   return (
     <View style={styles.container}>
       <Card style={styles.card}>
-        <Image
-          source={require("../../../assets/gary_profile.jpg")}
-          style={styles.image}
-          resizeMode="contain"
-        />
+        <View style={{ maxWidth: 400 }}>
+          <Image
+            source={require("../../../assets/gary_profile.jpg")}
+            style={styles.image}
+            resizeMode="contain"
+          />
+        </View>
         <View style={styles.textContainer}>
           <Title style={styles.title}>Gary Brawer Guitar and Bass Repair</Title>
           <Paragraph style={styles.paragraph}>
