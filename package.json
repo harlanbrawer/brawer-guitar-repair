@@ -12,12 +12,13 @@
     "lint": "eslint . --fix",
     "pretty": "prettier . --write",
     "deploy": "gh-pages -t -d dist",
-    "predeploy": "expo export -p web"
+    "predeploy": "expo export -p web",
+    "serve": "npx serve dist --single"
   },
   "dependencies": {
     "@expo/metro-runtime": "~3.1.1",
     "@types/react": "~18.2.45",
-    "expo": "^50.0.17",
+    "expo": "~50.0.19",
     "expo-constants": "~15.4.6",
     "expo-linking": "~6.2.2",
     "expo-router": "~3.4.10",

@@ -21,8 +21,9 @@ const HomePage: FC = () => {
     <View style={styles.container}>
       <Card style={styles.card}>
         <Image
-          source={{ uri: "../../../assets/gary_profile.jpg" }}
+          source={require("../../../assets/gary_profile.jpg")}
           style={styles.image}
+          resizeMode="contain"
         />
         <View style={styles.textContainer}>
           <Title style={styles.title}>Gary Brawer Guitar and Bass Repair</Title>
@@ -61,10 +62,8 @@ const createStyles = (theme: MD3Theme) =>
       padding: 16,
     },
     image: {
-      minWidth: 150,
-      minHeight: 150,
-      maxWidth: 300,
-      maxHeight: 300,
+      width: "100%",
+      height: "auto",
       aspectRatio: 1,
       borderRadius: 5,
     },
