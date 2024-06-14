@@ -3,8 +3,11 @@ import { FC } from "react";
 import { StyleSheet, Image, TouchableOpacity } from "react-native";
 import { Appbar } from "react-native-paper";
 
+import { useThemedStyleSheet } from "../../src";
+
 export const TopBanner: FC = () => {
   const router = useRouter();
+  const styles = useThemedStyleSheet(createStyles);
 
   return (
     <Appbar.Header style={styles.header}>
@@ -30,12 +33,15 @@ export const TopBanner: FC = () => {
   );
 };
 
-const styles = StyleSheet.create({
-  logo: {
-    width: 120,
-    height: 70,
-  },
-  header: {
-    paddingLeft: 0,
-  },
-});
+const createStyles = () =>
+  StyleSheet.create({
+    logo: {
+      width: 120,
+      height: 70,
+      borderTopRightRadius: 10,
+      borderBottomRightRadius: 10,
+    },
+    header: {
+      paddingLeft: 0,
+    },
+  });
